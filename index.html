@@ -1,37 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Age calculator app</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
-
-  Day
-  DD
-
-  Month
-  MM
-
-  Year
-  YYYY
-
-  -- years
-  -- months
-  -- days
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+  <head>
+    <!-- Displays site properly based on user's device -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <!-- Author and description -->
+    <meta name="author" content="Brayan Miza" />
+    <meta
+      name="description"
+      content="This is a solution to the Ping coming soon page challenge on Frontend Mentor."
+    />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <title>Frontend Mentor | Age calculator app</title>
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <!-- Script -->
+    <script defer src="./script.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1 class="visually-hidden">
+        Age calculator app challenge on Frontend Mentor
+      </h1>
+      <div class="calculator">
+        <form class="form">
+          <div class="form__inputs-container">
+            <div class="form__control">
+              <label for="day" class="form__control-label">Day</label>
+              <input
+                type="text"
+                id="day"
+                name="day"
+                class="form__control-input"
+                value="24"
+                placeholder="DD"
+              />
+              <p class="form__control-error-msg"></p>
+            </div>
+            <div class="form__control">
+              <label for="month" class="form__control-label">Month</label>
+              <input
+                type="text"
+                id="month"
+                name="month"
+                class="form__control-input"
+                value="09"
+                placeholder="MM"
+              />
+              <p class="form__control-error-msg"></p>
+            </div>
+            <div class="form__control">
+              <label for="year" class="form__control-label">Year</label>
+              <input
+                type="text"
+                id="year"
+                name="year"
+                class="form__control-input"
+                value="1984"
+                placeholder="YYYY"
+              />
+              <p class="form__control-error-msg"></p>
+            </div>
+          </div>
+          <button type="submit" aria-label="Submit" class="form__submit">
+            <img
+              src="./assets/images/icon-arrow.svg"
+              alt=""
+              aria-hidden="true"
+              width="24"
+            />
+          </button>
+        </form>
+        <div class="results">
+          <p class="results__text">
+            <span class="results__number">38</span> years
+          </p>
+          <p class="results__text">
+            <span class="results__number">3</span> months
+          </p>
+          <p class="results__text">
+            <span class="results__number">26</span> days
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">
+        Frontend Mentor </a
+      >. Coded by
+      <a href="https://github.com/bramizdev" target="_blank">@bramizdev</a>.
+    </footer>
+  </body>
 </html>
