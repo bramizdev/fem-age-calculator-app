@@ -45,8 +45,8 @@
                 id="day"
                 name="day"
                 class="form__control-input"
-                value="24"
                 placeholder="DD"
+                value="24"
               />
               <p class="form__control-error-msg"></p>
             </div>
@@ -57,7 +57,6 @@
                 id="month"
                 name="month"
                 class="form__control-input"
-                value="09"
                 placeholder="MM"
               />
               <p class="form__control-error-msg"></p>
@@ -69,7 +68,6 @@
                 id="year"
                 name="year"
                 class="form__control-input"
-                value="1984"
                 placeholder="YYYY"
               />
               <p class="form__control-error-msg"></p>
@@ -77,23 +75,17 @@
           </div>
           <button type="submit" aria-label="Submit" class="form__submit">
             <img
+              class="form__submit-icon"
               src="./assets/images/icon-arrow.svg"
               alt=""
               aria-hidden="true"
-              width="24"
             />
           </button>
         </form>
         <div class="results">
-          <p class="results__text">
-            <span class="results__number">38</span> years
-          </p>
-          <p class="results__text">
-            <span class="results__number">3</span> months
-          </p>
-          <p class="results__text">
-            <span class="results__number">26</span> days
-          </p>
+          <p><span class="results__number results__years">--</span> years</p>
+          <p><span class="results__number results__months">--</span> months</p>
+          <p><span class="results__number results__days">--</span> days</p>
         </div>
       </div>
     </main>
