@@ -217,6 +217,22 @@ footer a:is(:hover, :focus-visible) {
   width: 24px;
 }
 
+.form__control-error-msg {
+  color: var(--clr-secundary-500);
+  font-weight: var(--fw-400);
+  font-style: italic;
+  font-size: var(--fs-300);
+  padding-top: 0.75rem;
+}
+
+.form__control-label-error {
+  color: var(--clr-secundary-500);
+}
+
+.form__control-input-error {
+  border: 1px solid var(--clr-secundary-500);
+}
+
 @media (min-width: 52rem) {
   .form {
     padding-top: 2rem;
