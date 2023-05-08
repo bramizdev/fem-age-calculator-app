@@ -83,6 +83,55 @@ const validateInputs = (day, month, year) => {
   return isValid;
 };
 
+const calculateData = (day, month, year) => {
+  const results = {
+    years: 0,
+    months: 0,
+    days: 0,
+  };
+
+  const birth = new Date(year, month - 1, day);
+  const curDate = new Date();
+
+  const daysPassed = Math.floor((curDate - birth) / (1000 * 60 * 60 * 24));
+
+  results.years = daysPassed / 365;
+  results.months = (results.years * 12) % 12;
+  results.days = (results.months * 30) % 30;
+
+  return results;
+};
+
+const animateResult = (el, result) => {
+  const numbers = '0123456789';
+  let interval = null;
+  let iteration = 0;
+
+  clearInterval(interval);
+
+  interval = setInterval(() => {
+    el.innerText = result
+      .split('')
+      .map((_, i) => {
+        if (i < iteration) {
+          return result[i];
+        }
+        return numbers[Math.floor(Math.random() * 10)];
+      })
+      .join('');
+    if (iteration >= result.length) {
+      clearInterval(interval);
+    }
+    iteration += 1 / 3;
+  }, 40);
+};
+
+const displayResults = ({ years, months, days }) => {
+  animateResult($resultYears, String(Math.trunc(years)).padStart(2, '0'));
+  animateResult($resultMonths, String(Math.trunc(months)).padStart(2, '0'));
+  animateResult($resultDays, String(Math.trunc(days)).padStart(2, '0'));
+};
+
 $form.addEventListener('submit', (e) => {
   e.preventDefault();
   const day = Number($day.value.trim());
@@ -92,5 +141,7 @@ $form.addEventListener('submit', (e) => {
   [$day, $month, $year].forEach((el) => resetError(el));
 
   if (!validateInputs(day, month, year)) return;
-  console.log('Valid inputs');
+  const results = calculateData(day, month, year);
+
+  displayResults(results);
 });
