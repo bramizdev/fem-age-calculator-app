@@ -204,7 +204,7 @@ footer a:is(:hover, :focus-visible) {
   position: absolute;
   bottom: -32px;
   right: 50%;
-  transform: translateX(-50%);
+  transform: translateX(50%);
   cursor: pointer;
 }
 
@@ -256,6 +256,7 @@ footer a:is(:hover, :focus-visible) {
     right: 0;
     transform: none;
   }
+
   .form__submit img {
     margin: 0 auto;
     width: 44px;
